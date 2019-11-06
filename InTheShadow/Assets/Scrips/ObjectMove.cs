@@ -25,7 +25,8 @@ public class ObjectMove : MonoBehaviour {
 			isHolding = false;
 	}
 	void GetAxis() {
-		gameObject.transform.Rotate(new Vector3(Input.GetAxis("Mouse Y") * speed, Input.GetAxis("Mouse X") * speed, 0));
+		transform.RotateAround(transform.position, new Vector3(1, 0, 0), Input.GetAxis("Mouse Y") * speed);
+		transform.RotateAround(transform.position, new Vector3(0, 1, 0), Input.GetAxis("Mouse X") * speed);
 	}
 	void OnMouseEnter() {
 		Debug.Log("Enter");
